@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MP\ArrowPath;
+namespace MP\ArrowPath;
 
 
 class Arrow implements \ArrayAccess, \Countable
