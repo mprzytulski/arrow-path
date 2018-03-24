@@ -1,0 +1,11 @@
+{
+    "name": "mprzytulski/arrow-path",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Michal Przytulski",
+            "email": "michal@przytulski.pl"
+        }
+    ],
+    "require": {}
+}
