@@ -65,7 +65,7 @@ class Arrow implements \ArrayAccess, \Countable
     public function __get($name)
     {
         if (is_array($this->data[$name] ?? null) || (!isset($this->data[$name]) && $this->naive)) {
-            return new self($this->data[$name] ?? []);
+            return new self($this->data[$name] ?? [], $this->naive);
         }
 
         return $this->data[$name] ?? null;
@@ -96,6 +96,16 @@ class Arrow implements \ArrayAccess, \Countable
     public function __call($name, $arguments)
     {
         return count($this->data) ? $this->data : $arguments[0] ?? null;
+    }
+
+    /**
+     * Return raw value
+     * @param null $default
+     * @return array|mixed|null
+     */
+    public function val($default = null)
+    {
+        return $this->__call('_', [$default]);
     }
 
     /**
